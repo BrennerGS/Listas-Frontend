@@ -1,13 +1,13 @@
 import React from "react";
 import ItemComponent from "./ItemComponent";
 
-export default function ListComponent(){
+export default function ListComponent(props){
+    const items = props.items;
     return (
         <div>
-            <h2>Minha Lista</h2>
+            <h2> { props.listName} </h2>
             <ul>
-                <ItemComponent name={'Meu item'}/>
-                <ItemComponent name={'Meu item 2'}/>
+                {items.map(item => <ItemComponent key={item.id} name={item.name} />)}
             </ul>
         </div>
     )
