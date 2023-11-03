@@ -1,4 +1,5 @@
 import React from "react";
+import UserLists from "./UserLists";
 
 export default class LoginComponent extends React.Component{
 
@@ -30,21 +31,28 @@ export default class LoginComponent extends React.Component{
         }; 
         fetch('http://127.0.0.1:8000/api-token-auth/', requestOptions)
             .then(response => response.json())
-            .then(data => localStorage.setItem('token', data.token));
+            .then(data => {
+                localStorage.setItem('token', data.token);
+                this.setState({token: data.token});
+            });
         event.preventDefault();
       }
       render() {
-        return (
-          <form onSubmit={this.handleSubmit}>
-            <label>
-            Username: 
-              <input type="text" value={this.state.username} onChange={this.handleChange} />
-            Password: 
-              <input type="password" value={this.state.password} onChange={this.handleChangePassword} />
-            </label>
-            <input type="submit" value="Submit" />
-          </form>
-        );
+        var token = localStorage.getItem('token');
+        if(!token || token =="undefined")
+            return (
+            <form onSubmit={this.handleSubmit}>
+                <label>
+                Username: 
+                <input type="text" value={this.state.username} onChange={this.handleChange} />
+                Password: 
+                <input type="password" value={this.state.password} onChange={this.handleChangePassword} />
+                </label>
+                <input type="submit" value="Submit" />
+            </form>
+            );
+        else
+            return <UserLists/>
       }
 
 
