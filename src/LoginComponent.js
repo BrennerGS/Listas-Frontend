@@ -6,7 +6,7 @@ export default class LoginComponent extends React.Component{
 
     constructor(props) {
         super(props);
-        this.state = {username: 'mariana', password: '0101Bgs*'};
+        this.state = {username: 'admin', password: '0101Bgs*'};
     
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -37,6 +37,12 @@ export default class LoginComponent extends React.Component{
             });
         event.preventDefault();
       }
+
+      logout(){
+        localStorage.removeItem('token');
+        this.setState({token: null});
+      }
+
       render() {
         var token = localStorage.getItem('token');
         if(!token || token =="undefined")
@@ -52,7 +58,13 @@ export default class LoginComponent extends React.Component{
             </form>
             );
         else
-            return <UserLists/>
+            return (
+                <div>
+                    <UserLists/>
+                    <button onClick={() => this.logout() }>Logout</button>
+                </div>
+            )
+
       }
 
 
