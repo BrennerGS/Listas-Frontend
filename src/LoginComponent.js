@@ -6,7 +6,7 @@ export default class LoginComponent extends React.Component{
 
     constructor(props) {
         super(props);
-        this.state = {username: 'admin', password: '0101Bgs*'};
+        this.state = {username: '', password: ''};
     
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -29,7 +29,7 @@ export default class LoginComponent extends React.Component{
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ username: this.state.username, password: this.state.password })
         }; 
-        fetch('http://127.0.0.1:8000/api-token-auth/', requestOptions)
+        fetch('http://20.38.46.104:8080/api-token-auth/', requestOptions)
             .then(response => response.json())
             .then(data => {
                 localStorage.setItem('token', data.token);
@@ -45,7 +45,7 @@ export default class LoginComponent extends React.Component{
 
       render() {
         var token = localStorage.getItem('token');
-        if(!token || token =="undefined")
+        if(!token || token ==="undefined")
             return (
             <form onSubmit={this.handleSubmit}>
                 <label>
@@ -54,7 +54,7 @@ export default class LoginComponent extends React.Component{
                 Password: 
                 <input type="password" value={this.state.password} onChange={this.handleChangePassword} />
                 </label>
-                <input type="submit" value="Submit" />
+                <input type="submit" value="Login" />
             </form>
             );
         else

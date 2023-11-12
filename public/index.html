@@ -1,21 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="description" content="Web site created using create-react-app" />
+  <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+  <link rel="stylesheet" href="%PUBLIC_URL%/assets/css/main.css">
+  <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+  <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
       Only files inside the `public` folder can be referenced from the HTML.
@@ -24,20 +23,92 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>React App</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+  <title>React App</title>
+</head>
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+<body>
+  <div class="page-wrap">
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-  </body>
+    <!-- Nav -->
+    <nav id="nav">
+      <ul>
+        <li><a href="index.html" class="active"><span class="icon fa-home"></span></a></li>
+        <li><a href="gallery.html"><span class="icon fa-camera-retro"></span></a></li>
+        <li><a href="generic.html"><span class="icon fa-file-text-o"></span></a></li>
+      </ul>
+    </nav><!-- Main -->
+    <section id="main"><!-- Banner -->
+
+      <section id="banner">
+        <div class="inner">
+          <h1>App de lista de tarefas</h1>
+          <p>Com esse app vc pode fazer listas e marcar quando concluir cada parte da lista</p>
+          <ul class="actions">
+            <li><a href="#login" class="button alt scrolly big">Login</a></li>
+          </ul>
+        </div>
+      </section><!-- Gallery -->
+      <section id="login"><!-- Photo Galleries -->
+        <div class="gallery">
+          <header class="special">
+            <div id="root"></div>
+          </header>
+        </div>
+      </section><!-- Contact -->
+      <section id="contact"><!-- Social -->
+        <div class="social column">
+          <h3>About Me</h3>
+          <p>Mus sed interdum nunc dictum rutrum scelerisque erat a parturient condimentum potenti dapibus vestibulum
+            condimentum per tristique porta. Torquent a ut consectetur a vel ullamcorper a commodo a mattis ipsum class
+            quam sed eros vestibulum quisque a eu nulla scelerisque a elementum vestibulum.</p>
+          <p>Aliquet dolor ultricies sem rhoncus dolor ullamcorper pharetra dis condimentum ullamcorper rutrum vehicula
+            id nisi vel aptent orci litora hendrerit penatibus erat ad sit. In a semper velit eleifend a viverra
+            adipiscing a phasellus urna praesent parturient integer ultrices montes parturient suscipit posuere quis
+            aenean. Parturient euismod ultricies commodo arcu elementum suspendisse id dictumst at ut vestibulum conubia
+            quisque a himenaeos dictum proin dis purus integer mollis parturient eros scelerisque dis libero parturient
+            magnis.</p>
+          <h3>Follow Me</h3>
+          <ul class="icons">
+            <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+            <li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+            <li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+          </ul>
+        </div>
+
+        <!-- Form -->
+        <div class="column">
+          <h3>Get in Touch</h3>
+          <form action="#" method="post">
+            <div class="field half first">
+              <label for="name">Name</label>
+              <input name="name" id="name" type="text" placeholder="Name">
+            </div>
+            <div class="field half">
+              <label for="email">Email</label>
+              <input name="email" id="email" type="email" placeholder="Email">
+            </div>
+            <div class="field">
+              <label for="message">Message</label>
+              <textarea name="message" id="message" rows="6" placeholder="Message"></textarea>
+            </div>
+            <ul class="actions">
+              <li><input value="Send Message" class="button" type="submit"></li>
+            </ul>
+          </form>
+        </div>
+      </section>
+    </section>
+  </div>
+  <div class="copyright">
+    Design by: <a href="https://templated.co/">TEMPLATED.CO</a>
+  </div>
+  <!-- Scripts -->
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/jquery.poptrox.min.js"></script>
+  <script src="assets/js/jquery.scrolly.min.js"></script>
+  <script src="assets/js/skel.min.js"></script>
+  <script src="assets/js/util.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+
 </html>
